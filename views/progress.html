@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block head %}
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+    /* iframe's parent node */
+    div#root {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+    /* iframe itself */
+    div#root > iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+<div>
+  <h3 class="description" style="text-align:center">Current Sprint Report</h3>
+  <div id="root">
+    <h5>Sprint Report Nov 30</h5>
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vSA-b2M8GjM2ph8RepgvlwmWqx6vozzudP89NHbxDq_eyPkl_fEd9YQQPwwKAleZxTO0d0MFis0YYkI/pub?embedded=true"></iframe>
+  </div>
+  <div id="root">
+    <h5>Sprint Report Nov 16</h5>
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vQCx_sr8hUJ2yDpO4azPmAxxcYMamrAD4_WjEse5pgIsquPxLq3_tK3AWU_4aKwGzGc_eo6ldDDmA1j/pub?embedded=true"></iframe>
+  </div>
+  <div id="root">
+    <h5>Sprint Report Nov 9</h5>
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vRUgXfbt5uB13fbQF3TMz2mH_DpLtqRvCNO5FGG_SmXJkqnGsk7gSOoIsd6I0_Q18GFTbqLboENYtPf/pub?embedded=true"></iframe>
+  </div>
+  <br>
+  <div id="root">
+    <h5>Sprint Report Nov 2</h5>
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vQroWcBVtqfpMWREcm9EmRc5jQYzuE0EvnE7u-Jf4dR0gA7KOA3ytGYNgNMx3EeMwibpIUocXrtOO-L/pub?embedded=true"></iframe>
+  </div>
+</div>
+<br>
+<br>
+<div style="text-align:center">
+  <h3 class="description">Previous Sprint Reports</h3>
+  <p><a href="/progress/report4">Sprint Report Nov 30 (in HTML)</a></p>
+  <p><a href="/progress/report3">Sprint Report Nov 16 (in HTML)</a></p>
+  <p><a href="/progress/report2">Sprint Report Nov 09 (in HTML)</a></p>
+  <p><a href="/progress/report1">Sprint Report Nov 02 (in HTML)</a></p>
+</div>
+{% endblock %}

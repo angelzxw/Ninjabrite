@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  This is the body of the hello template.
+
+  {%if peopleMatchignQuery %}
+  <ul>
+    {% for person in peopleMatchignQuery %}
+    <li>{{person}}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  <form method="get">
+    <label for="q">Search</label>
+    <input type="text" name="q" value="">
+    <button type="submit">Submit</button>
+  </form>
+{% endblock %}

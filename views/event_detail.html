@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+{% block head %}
+<link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+{% endblock %}
+
+{% block body %}
+<div class="row columns">
+  <nav aria-label="You are here:" role="navigation">
+    <ul class="breadcrumbs">
+      <li><a href="/">Home</a></li>
+      <li><a href="/events">Events</a></li>
+      <li>
+        <span class="show-for-sr">Current: </span> {{event.title}}
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div class="row">
+  <div class="medium-6 columns">
+    <img id="image" alt="event image" class="thumbnail" src="{{event.image}}">
+  </div>
+  <div class="medium-6 large-5 columns">
+    <h1 id="title">{{event.title}}</h1>
+    <span id="date">Time: {{event.time}}</span>
+    <span id="location">Location: {{event.location}}</span>
+    <p>{{event.description}}</p>
+    <form method="post" action="/rsvp/{{event.id}}">
+      <input type="email" id="email" name="email" placeholder="Email *" size="37" required="">
+      <button type="submit" name="submit" class="button large expanded">Submit</button>
+    </form>
+  </div>
+</div>
+
+<div>
+  <div>Attendees:</div>
+  <ul class="list-group" id="attendees">
+    {% for attendee in event.attendees %}
+      <li class="list-group-item">{{attendee}}</li>
+    {% endfor %}
+  </ul>
+  {% if errors %}
+  <ul class="form-errors">
+    {% for error in errors %}
+    <li class="error">{{error}}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>
+<div>
+<div>
+  <br>
+  <div>Want to contribute? <a href="/donate" id="donate" onclick="myFunction0">Donate</a> now!<div>
+
+</div>
+  <!---
+  <div class="column row">
+    <hr>
+    <ul class="tabs" data-tabs id="example-tabs">
+      <li class="tabs-title"><a href="#panel1">Other Events You May Like</a></li>
+    </ul>
+    {%if events %}
+    <div class="tabs-content" data-tabs-content="example-tabs">
+      <div class="tabs-panel" id="panel1">
+        <div class="row medium-up-3 large-up-5">
+          {% for event in events %}
+          <div class="column">
+            <img src="{{event.image}}">
+            <h5><a href="/events/{{event.id}}">{{event.title}}</h5>
+            <p>{{event.location}}</p>
+            <p>{{event.description}}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  --->
+
+<!--
+  <script>
+    (function () {
+      var styles = document.createElement('link');
+      styles.rel = 'stylesheet';
+      styles.type = 'text/css';
+      styles.media = 'screen';
+      styles.href = 'http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css';
+      document.getElementsByTagName('head')[0].appendChild(styles);
+    })();
+  </script>
+-->
+
+  <script>
+    function myFunction0() {
+      confirm("Thank you for your donation!");
+    }
+  </script>
+
+  <script>
+    function myFunction1() {
+      confirm("Thank you for your support!");
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+
+  <!--<form method="get">-->
+  <!--<label for="q">Search</label>-->
+  <!--<input type="text" name="q" value="">-->
+  <!--<button type="submit">Submit</button>-->
+  <!--</form>-->
+  {% endblock %}

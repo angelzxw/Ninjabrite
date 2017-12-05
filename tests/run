@@ -1,0 +1,3 @@
+cd releases
+./chromedriver -fast &
+./eventbrite-clone-selenium-tests-mac-v2.0 test "http://localhost:9515" "http://localhost:8000"

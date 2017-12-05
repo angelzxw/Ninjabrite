@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+{%if events %}
+<h3 class="description" style="text-align:center">All Events</h3>
+<div class="row">
+  {% for event in events %}
+  <div class="col-md-auto">
+    <div class="media">
+      <img class="mr-3" src="{{event.image}}" height="75" width="75">
+       <div class="media-body">
+         <h5 class="mt-0"><a href="/events/{{event.id}}">{{event.title}}</a></h5>
+         <p>Time: {{event.time}}</p>
+         <p>Location: {{event.location}}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

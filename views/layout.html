@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-110469968-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics -->
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  {% block head %}
+  {% endblock %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/about.css">
+  <link rel="stylesheet" href="/styles/events.css">
+  <style>
+  /* iframe's parent node */
+  div#root {
+      position: relative;
+      width: 100%;
+      height: 800px;
+      padding: 0px;
+      margin: 0px 0px 100px 100px;
+  }
+  /* iframe itself */
+  div#root > iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+  }
+
+  #findEvent {
+    background-image: url(https://s-media-cache-ak0.pinimg.com/originals/07/62/23/0762230a07111427b901bfa8266865cc.jpg);
+    background-repeat: no-repeat;
+    padding: 15px;
+  }
+
+  #createEvent {
+    background-image: url(https://static.pexels.com/photos/510015/pexels-photo-510015.jpeg);
+    background-repeat: no-repeat;
+    padding: 15px;
+  }
+
+  ul{
+    list-style-type:none;
+  }
+
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <header class="header clearfix">
+    <nav>
+      <ul class="nav nav-pills float-right">
+        <li class="nav-item">
+          <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <!--<li class="nav-item">-->
+          <!--<a class="nav-link" href="/account">My Account</a>-->
+        <!--</li>-->
+        <li class="nav-item">
+          <a class="nav-link" href="/events">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="new" href="/events/new">Create Event</a>
+        </li>
+        <!--
+        <li class="nav-item">
+          <a class="nav-link" href="/progress">Sprint Report</a>
+        </li>
+        ----->
+      </ul>
+    </nav>
+    <h3 class="text-muted">
+      <a href="/">
+        <img id="logo"  src="https://lh3.googleusercontent.com/DY0h83aVarK5WGyVp_5bElEPNEmev-gyNmeQ9C2DvoHXDjNZzU-VlQOb9fxeZgb-Lcy4OO-owSP1YEe2NpLnjmw-U7x3WY9REaXmSGkbiVQAS-ufP6ZeKnouMknRaz3b-CADsOSrjFR1QXIXYMb0xXA1wRaUlb9usqjg47Wl1d4YVG6YvXIzI__G8Jm3FWlLfw7stOaAf81Ks26NZMt8GKHHH6QTYgErMYj9qEBtFl6iwsuqskKICvZFRmEowqGO82u_u6OBADChceCiZlGZvv6d3S0f0tH3Q_H_3-YP7mebEcJmH3w_p4FiaIC7UCoEZS5qEpDzi4rskJqNPBWadn73lNrh6vqYRIkgwoyOi96A3VpJoUSL01w1_enz51JlBdYvv23PBxutUCT5U_0-uBmdWSiPtZfJjhXbHPyt_RUGLm4-yn0CN6-Db6m_1rgXOy89R-9CQUd-4E-HO-TMrA4tbbrvRR4bHSj8S6uEYfYuTG6X6rrqhCrSJbdQWu9Yx6BuiqwH0yqkncFR8qXyONrgnbjZSvXqA7cZz2R8BMrD49DIcFW4__GOOB6g-cxjrOiNii8kQUqV0mTg-NmfDXFnJr7JQUJDC2GSNguU1P7T-qU0fzbWnn11oWVk0XoGL9PVcDjDZblXt10IwP93Pi3GHM2O-hH9Slc=w521-h528-no" height="75" width="75">
+        Eventbrite
+      </a>
+    </h3>
+  </header>
+  <div class="content">
+    {% block body %}
+    {% endblock %}
+  </div>
+
+  <footer class="footer">
+    <!--<div><a href="/donate" id="donate">Donate</a> now!</div>-->
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+    </div>
+    <p>&copy; Ninjas 2017</p>
+  </footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</body>
+</html>

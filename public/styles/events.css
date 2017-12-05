@@ -1,0 +1,24 @@
+.about{
+    font-family: 'Quicksand', sans-serif;
+    padding:15px 0;
+}
+h3.description{
+	font-weight: bold;
+	letter-spacing: 2px;
+	border-bottom: 1px solid rgba(0, 0, 0,0.1);
+	padding-bottom: 5px;
+}
+.event {
+  margin:25px 25px 15px 25px;
+  text-align:center;
+}
+.event h1{
+	font-weight: normal;
+	font-size: 20px;
+	margin:10px 10px 10px 10px;
+}
+.event h2{
+	font-size: 14px;
+	font-weight: lighter;
+	margin-top: 5px;
+}／

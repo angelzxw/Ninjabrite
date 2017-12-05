@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<section id="findEvent" class="page" style="text-align:center">
+<h3 class="description" style="color:#fff">Find your next experience</h3>
+<form method="get">
+  <input type="text" name="q" value="" placeholder="Search events or categories" style="width: 300px">
+  <button type="submit">SEARCH</button>
+</form>
+</section>
+<br>
+<br>
+<section id="allEvents" class="page" style="text-align:center" >
+<h3 class="description">Events for you</h3>
+{%if events %}
+<ul>
+<div class="row">
+  {% for event in events %}
+  <li class="event" id="event-{{event.id}}">
+    <h3><a id="title" href="/events/{{event.id}}">{{event.title}}</a></h3>
+    <p>Time: <time>{{event.time}}</time></p>
+    <p>Location: {{event.location}}</p>
+  </li>
+  {% endfor %}
+</div>
+</ul>
+
+{% endif %}
+</section>
+<br>
+<br>
+<section id="createEvent" class="page" style="text-align:center">
+<h3 class="description" style="color:#fff">Create Events</h3>
+
+<form method="post" action="/events">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+        <input type="text" name="title" placeholder="Title *" required="">
+      </div>
+      <div class="col-md-auto">
+        <input type="text" name="date" placeholder="Date *: MM/DD/YYYY" required="">
+      </div>
+      <div class="col-md-auto">
+        <input type="text" name="location" placeholder="Location *" required="">
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+        <textarea rows="4" cols="69" name="description" placeholder="Description" required=""></textarea>
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+        <lable style="color:#fff">Upload Event Image</lable>
+      </div>
+      <div class="col-md-auto">
+        <input type="text" name="image" placeholder="URL *" size="37" required="">
+      </div>
+    <!---
+      <input type="file" name="pic" accept="image/*" style="color:#fff">
+    -->
+      <div class="col-md-auto">
+        <button type="submit">Create</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+<!--
+<<<<<<< Updated upstream
+=======
+>>>>>>> origin/master
+<form method="post" action="/events">
+  <div>
+      <input type="text" name="title" placeholder="Title *" required="">
+  </div>
+  <div>
+      <input type="text" name="data" placeholder="Data *" required="">
+  </div>
+  <div>
+      <input type="text" name="location" placeholder="Location *" required="">
+  </div>
+  <div>
+      <input type="text" name="description" placeholder="Description *" required="">
+  </div>
+  <button type="submit">Create</button>
+</form>
+<<<<<<< HEAD
+=======
+<form method="post" action="/events">
+  <div>
+    <input type="text" name="title" placeholder="Title *" required="">
+    <input type="text" name="date" placeholder="Date *" required="">
+    <input type="text" name="location" placeholder="Location *" required="">
+  </div>
+  <br>
+  <div>
+      <textarea rows="4" cols="63" name="description" placeholder="Description *" required="" size="55"></textarea>
+  </div>
+  <br>
+  <lable style="color:#fff">Upload Event Image</lable>
+  <input type="file" name="pic" accept="image/*" style="color:#fff">
+  <button type="submit">Create</button>
+</form>
+>>>>>>> Stashed changes
+-->
+
+</section>
+{% endblock %}
